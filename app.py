@@ -122,10 +122,13 @@ def SearchByName():
 
 @app.route('/SearchByNameResults', methods=['POST'])
 def SearchByNameResults():
-    P_SearchingName = request.form['SearchingName']
-    cursor.execute("SELECT * FROM SearchByName(%s);",(P_SearchingName,))
-    data = cursor.fetchall()
-    return render_template('SearchResults.html', data=data)
+    if session.get('user'):
+        P_SearchingName = request.form['SearchingName']
+        cursor.execute("SELECT * FROM SearchByName(%s);",(P_SearchingName,))
+        data = cursor.fetchall()
+        return render_template('SearchResults.html', data=data)
+    else:
+        return render_template('404.html',  text = 'Unauthorized Access')
 
 
 @app.route("/SearchByDate")
@@ -137,11 +140,14 @@ def SearchByDate():
 
 @app.route('/SearchByDateResults', methods=['POST'])
 def SearchByDateResults():
-    P_SearchingDate = request.form['SearchingDate']
-    print(P_SearchingDate)
-    cursor.execute("SELECT * FROM SearchByDate(%s);",(P_SearchingDate,))
-    data = cursor.fetchall()
-    return render_template('SearchResults.html', data=data)
+    if session.get('user'):
+        P_SearchingDate = request.form['SearchingDate']
+        print(P_SearchingDate)
+        cursor.execute("SELECT * FROM SearchByDate(%s);",(P_SearchingDate,))
+        data = cursor.fetchall()
+        return render_template('SearchResults.html', data=data)
+    else:
+        return render_template('404.html',  text = 'Unauthorized Access')
 
 
 @app.route("/DeletePatient")
