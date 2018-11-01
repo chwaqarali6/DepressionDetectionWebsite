@@ -2,7 +2,7 @@ from flask import Flask, render_template, json, request, session, redirect, url_
 import os, psycopg2, urllib.parse as urlparse
 
 app = Flask(__name__)
-app.secret_key = 'b"\xce\xc3\x80'\x92\xbb\xd2\x07\x86A\xe0X\xaa\x1e5q\xb9\xb8\x82\x941c\x15\xf5"'
+app.secret_key = '\xce\xc3\x80'\x92\xbb\xd2\x07\x86A\xe0X\xaa\x1e5q\xb9\xb8\x82\x941c\x15\xf5'
 
 url = urlparse.urlparse(os.environ.get('DATABASE_URL'))
 db = "dbname=%s user=%s password=%s host=%s " % (url.path[1:], url.username, url.password, url.hostname)
