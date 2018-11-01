@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Depression Analysis</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../static/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../static/images/favicon.ico" type="image/x-icon">
+    <link href="../static/AdminStatic/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/AdminStatic/css/animate.css" rel="stylesheet">
+    <link href="../static/AdminStatic/css/style.css" rel="stylesheet">
+    <link href="../static/AdminStatic/css/colors/default.css" id="theme" rel="stylesheet">
+</head>
+
+<body>
+    <section id="wrapper" class="error-page">
+        <div class="error-box">
+            <div class="error-body text-center">
+                <h1 class="text-danger">ERROR</h1>
+
+                <h3 class="text-uppercase">{% if text %}{{ text }}{% endif %}</h3>
+
+                <p class="text-muted m-t-30 m-b-30">YOU SEEM TO BE TRYING TO FIND HIS WAY HOME</p>
+                <a href="/" class="btn btn-danger btn-rounded waves-effect waves-light m-b-40">Back to home</a>
+            </div>
+        </div>
+    </section>
+    <script src="../static/AdminStatic/plugins/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../static/AdminStatic/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

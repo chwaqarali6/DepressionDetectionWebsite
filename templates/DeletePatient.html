@@ -1,0 +1,35 @@
+{% include "AdminHeader.html" %}
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row bg-title">
+                    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                        <h4 class="page-title">Delete Patient</h4> </div>
+                    <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+                        <ol class="breadcrumb">
+                            <li><a href="/Admin">Dashboard</a></li>
+                            <li class="active">DeletePatient</li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8 col-xs-12">
+                        <div class="white-box">
+                            <form class="form-horizontal form-material validate-form" action="{{url_for('DeletePatientFunction') }}" method="post" >
+                                <div class="form-group" >
+                                    <label class="col-md-12">Patient ID</label>
+                                    <div class="col-md-12 validate-input" data-validate = "Patient ID Is Required">
+                                        <input type="number" class="input100 form-control form-control-line" id="PatientID" name="PatientID" placeholder="Enter Patient ID" > </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <input id="DeletePatientButton" type="submit" class="btn btn-success" value="Delete Patient">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% include "AdminFooter.html" %}

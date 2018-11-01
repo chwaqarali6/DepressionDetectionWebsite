@@ -1,0 +1,57 @@
+{% include "AdminHeader.html" %}
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row bg-title">
+                    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                        <h4 class="page-title">Search Results</h4>
+                    </div>
+                    <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+                        </a>
+                        <ol class="breadcrumb">
+                            <li><a href="/Admin">Dashboard</a></li>
+                            <li class="active">Search Results Table</li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="white-box">
+                            <h3 class="box-title">Patients</h3>
+                            <!--<p class="text-muted">Add class <code>.table</code></p>-->
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Name</th>
+                                            <th>CNIC</th>
+                                            <th>Email</th>
+                                            <th>Contact</th>
+                                            <th>Address</th>
+                                            <th>CheckIn Date</th>
+                                            <th>Comments</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for item in data %}
+                                            <tr>
+                                                <td>{{item[0]}}</td>
+                                                <td>{{item[1]}}</td>
+                                                <td>{{item[2]}}</td>
+                                                <td>{{item[3]}}</td>
+                                                <td>{{item[4]}}</td>
+                                                <td>{{item[5]}}</td>
+                                                <td>{{item[6]}}</td>
+                                                <td>{{item[7]}}</td>
+                                            </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% include "AdminFooter.html" %}
